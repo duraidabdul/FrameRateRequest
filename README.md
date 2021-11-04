@@ -57,7 +57,11 @@ class FrameRateRequest {
 
 **You can now submit a frame rate request like this:**
 ```swift
-// Attempts to increase the display refresh rate to 120 Hz for 0.4s.
+UIViewPropertyAnimator(duration: 0.4, dampingRatio: 1) {
+    // Perform animation(s) here.
+}.startAnimation()
+
+// Attempts to increase the display refresh rate to 120 Hz for 0.4s (the expected duration of the animation).
 let request = FrameRateRequest(preferredFrameRate: 120,
                                duration: 0.4)
 request.perform()
