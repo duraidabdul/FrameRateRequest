@@ -6,7 +6,7 @@ When using a UIViewPropertyAnimator to animate objects on iPhone 13 Pro, CoreAni
 
 Say you’re animating a rectangle quickly across the screen. It may decide to give you a smooth 120 FPS when the rectangle is moving fast (currently capped at 60 FPS due to a CoreAnimation bug). If you’re animating a button’s alpha, however, it may decide to give you a frame rate around 30 FPS (tested in instruments for a 0.4s alpha transition). This looks very choppy. For more information on this behaviour, see [Optimizing ProMotion Refresh Rates for iPhone 13 Pro and iPad Pro](https://developer.apple.com/documentation/quartzcore/optimizing_promotion_refresh_rates_for_iphone_13_pro_and_ipad_pro).
 
-It has already been observed that third party developers are unable to build animations exceeding 60 FPS using CoreAnimation on iPhone 13 Pro, but is should also be noted that developers cannot override lower refresh rate inferences either (i.e. a fading button running at 30 Hz), so more subtle fade animations will look choppy on this device.
+It has already been observed that third party developers are unable to build animations exceeding 60 FPS using CoreAnimation on iPhone 13 Pro, but it should also be noted that developers cannot override lower refresh rate inferences either (i.e. a fading button running at 30 Hz), so more subtle fade animations will look choppy on this device.
 
 I hope Apple addresses these CoreAnimation issues so that developers don’t have to manually work around them in the future, but for now, here is how you can run animations at your desired frame rate.
 
